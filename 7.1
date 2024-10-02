@@ -1,0 +1,17 @@
+# รับค่าจำนวนบรรทัดจากผู้ใช้
+num_lines = int(input("กรุณากรอกจำนวนบรรทัด: "))
+
+# เริ่มตัวแปรสำหรับนับบรรทัด
+line_number = 1
+
+# ใช้ while loop เพื่อตรวจสอบเงื่อนไข
+while line_number <= num_lines:
+    if line_number % 2 == 0:
+        # หากเลขบรรทัดเป็นคู่
+        print(f"({line_number}) Hello World")
+    else:
+        # หากเลขบรรทัดเป็นคี่
+        print(f"[{line_number}] Hello World")
+    
+    # เพิ่มตัวแปรนับบรรทัด
+    line_number += 1
