@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int play;
+    do {
+        // ตั้งค่าคะแนนเริ่มต้น
+        int score = 100;
+        int winning_number = 42; // ตัวเลขเฉลย
+        int guess;
+
+        // แจ้งผู้ใช้เกี่ยวกับการเล่นเกม
+        printf("Do you want to play game (1=play,-1=exit) :\n");
+        scanf("%d", &play);
+
+        if (play == -1) {
+            break; // ออกจากโปรแกรม
+        }
+
+        // เริ่มเกม
+        printf("(Score=%d)\n", score);
+        do {
+            printf("Guess the winning number (1-100) :\n");
+            scanf("%d", &guess);
+
+            if (guess < winning_number) {
+                score -= 10; // ลดคะแนน
+                printf("Sorry, the winning number is HIGHER than %d. (Score=%d)\n", guess, score);
+            } else if (guess > winning_number) {
+                score -= 10; // ลดคะแนน
+                printf("Sorry, the winning number is LOWER than %d. (Score=%d)\n", guess, score);
+            } else {
+                printf("That is correct! The winning number is %d.\n", winning_number);
+                printf("Score this game: %d\n", score);
+            }
+
+        } while (guess != winning_number && score > 0);
+
+        // หากคะแนนหมด
+        if (score <= 0) {
+            printf("Game over! You've run out of points.\n");
+        }
+
+    } while (play == 1); // เล่นต่อเมื่อผู้ใช้เลือก 1
+
+    return 0;
+}
