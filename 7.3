@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int n, i = 1;
+    long long sum = 0; // ตัวแปรสำหรับเก็บผลรวม
+    long long term = 9; // ตัวแปรสำหรับเก็บค่าปัจจุบันในชุดอนุกรม
+
+    // รับข้อมูลจากผู้ใช้
+    printf("Enter number :\n");
+    scanf("%d", &n);
+
+    // แสดงชุดอนุกรม
+    printf("Series = ");
+    
+    do {
+        // แสดงผลชุดอนุกรม
+        if (i > 1) {
+            printf(" + ");
+        }
+        printf("%lld", term);
+        
+        // เพิ่มผลรวม
+        sum += term;
+
+        // สร้างค่าถัดไปในชุดอนุกรม
+        term = term * 10 + 9; // ทำให้ค่าต่อไปเป็น 99, 999, 9999, ...
+        
+        i++;
+    } while (i <= n);
+
+    // แสดงผลรวม
+    printf("\nSum = %lld\n", sum);
+
+    return 0;
+}
