@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int is_prime(int num) {
+    if (num <= 1) return 0; // 0 และ 1 ไม่เป็นจำนวนเฉพาะ
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return 0; // ไม่เป็นจำนวนเฉพาะ
+        }
+    }
+    return 1; // เป็นจำนวนเฉพาะ
+}
+
+int main() {
+    int n;
+    
+    // รับค่าจากผู้ใช้
+    printf("Enter number :\n");
+    scanf("%d", &n);
+
+    // เริ่มจากจำนวน n และใช้ do while loop
+    int current = n;
+    
+    printf("Output:\n");
+    do {
+        if (is_prime(current)) {
+            printf("%d ", current);
+        }
+        current--;
+    } while (current > 1); // ทำซ้ำจนถึง 2
+
+    printf("\n");
+
+    return 0;
+}
