@@ -1,0 +1,18 @@
+# รับค่าตัวเลขเริ่มต้นและสิ้นสุดจากผู้ใช้
+start_num = int(input("Start :\n"))
+end_num = int(input("End :\n"))
+
+# เริ่มตัวแปรสำหรับนับเลขแม่สูตรคูณ
+current_num = start_num
+
+# ใช้ while loop เพื่อวนลูปจากเลขเริ่มต้นไปยังเลขสิ้นสุด
+while current_num <= end_num:
+    # เริ่มตัวแปรสำหรับนับตัวคูณ
+    multiplier = 1
+    while multiplier <= 9:
+        # แสดงผลแม่สูตรคูณ
+        result = current_num * multiplier
+        print(f"{current_num} x {multiplier} = {result}")
+        multiplier += 1
+    print()  # เพิ่มบรรทัดว่างระหว่างกลุ่มแม่สูตรคูณ
+    current_num += 1
